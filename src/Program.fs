@@ -87,6 +87,9 @@ document.Save(newRulesFile)
 [<EntryPoint>]
 let main argv =
     printfn "Not matched: %d" notMatched.Length
+    for rule in notMatched do
+        printfn "· %s" rule.Name
+
     Console.WriteLine("Press any key to exit")
     Console.ReadKey() |> ignore
     0 // return an integer exit code
